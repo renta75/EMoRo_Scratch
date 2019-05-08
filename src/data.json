@@ -1,0 +1,38 @@
+{
+  "title": "EMoRo",
+  "descriptor": {
+    "en": {
+      "blocks": [
+        [" ", "write io %m.io %m.vals", "write_io", "IO_0","0"],
+        ["R", "read io %m.io", "read_io", "IO_0"],
+        ["R", "read adc %m.adc", "read_adc", "ADC_0"],
+        [" ", "servo %m.servo %n", "servo", "SERVO_0",0],
+        ["R", "temperature %n ", "temperature", 0],
+        ["R", "ultrasound %m.gpp ", "ultrasound", "GPP_0"],
+        [" ", "cursor %n %n ", "cursor", 0,0],
+        [" ", "display %s ", "display", "some text..."],
+        ["R", "compass", "compass"],
+        ["R", "gyroscope %m.axis", "gyroscope", "x"],
+        ["w", "gyroscope init", "gyroscope_init"],
+        ["w", "gyroscope reset", "gyroscope_reset"],
+        ["R", "acceleration %m.axis", "acceleration", "x"],
+        ["w", "bluetooth write %s", "bluetooth_write", "some value..."],
+        ["R", "bluetooth read", "bluetooth_read"]
+      ],
+      "menus": {
+        "axis": ["x", "y", "z"],
+        "servo": ["SERVO_0", "SERVO_1", "SERVO_2", "SERVO_3", "SERVO_4", "SERVO_5", "SERVO_6", "SERVO_7" ],
+        "io": ["IO_0","IO_1","IO_2","IO_3","IO_4","IO_5","IO_6","IO_7","IO_8","IO_9","IO_10","IO_11","IO_12","IO_13","IO_14","IO_15"],
+        "adc": ["ADC_0","ADC_1","ADC_2","ADC_3","ADC_4","ADC_5","ADC_6","ADC_7"],
+        "gpp": ["GPP_0","GPP_1","GPP_2","GPP_3","GPP_4","GPP_5","GPP_6","GPP_7"],
+        "vals": ["0","1"]
+      },
+    "displayName": "EMoRo"
+    },
+    "hr": {
+      "blocks": [
+        ["R", "kompas", "compass"]
+      ]
+    }
+  }
+}

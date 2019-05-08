@@ -1,0 +1,47 @@
+Postavljanje digitalnog izlaza IO_0 do IO_15, ADC_0 do ADC_7    atribut 0 ili 1
+
+Čitanje digitalnog ulaza IO_0 do IO_15, ADC_0 do ADC_7,         povratna vrijednost, 0 ili 1
+
+Čitanje Analognog Ulaza ADC_0 do ADC_7                          povratna vrijednost od 0 -1023
+
+ 
+
+Postavljanje servo izlaza SERVO_0 do SERVO_7                                                   Vrijdenost za postqavljanje 0-255
+
+ 
+
+Čitanje DS18S20 temperaturnog senzora IO_0 do IO_15                                 temperatura kao float
+
+ 
+
+Čitanje ultrazvučnog senzora GPP_0 do GPP_7                                                   vrijednost u cm kao int
+
+ 
+
+Ispisivanje poruke na display                                                                                       atribut: text poruke (max 16 znakova)
+
+Postavljanje pozicije kursora na display                                                                   red 1 ili 2, pozicija 0 do 15
+
+ 
+
+Čitanje kompasa                                                                                                               povratna vrijednost stupnjevi 0-359  (0-North, 90-East, 180-South, 270-West)
+
+ 
+
+Čitanje kutne pozicije žiroskopa                                                                                 Atribut, x, y ili z os. Povratna vrijednost kut zakreta u stupnjevim
+
+Resetiranje kutne pozicije žiroskopa                                                                        nema atributa niti povratne vrijednosti
+
+Inicijalizacija žiroskopa                                                                                                   nema atributa niti povratne vrijednosti
+
+ 
+
+ 
+
+Čitanje akcelaeracije                                                                                                       Postavka: drugi complement ili akceleracija kao float, Atribut: x, y ili z os. Povratna vrijednost drugi complement ili akceleracija kao float
+
+ 
+
+Slanje znakova kroz komunikacijsko sučelje                                                          Atribut: Bluetooth ili konzola, Znakovi koji se šalju
+
+Primanje znakova kroz komunikacijsko sučelje                                                    Atribut: Bluetooth ili konzola

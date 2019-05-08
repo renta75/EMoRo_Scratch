@@ -1,0 +1,7 @@
+-implementirati tray sa nekim ikonicama
+    -integrorati u server
+-implmentirati buzz metodu
+-implementirati ultrazvuk
+-implementirati spajanje na paralelni način
+-implementirati Split metodu 
+
