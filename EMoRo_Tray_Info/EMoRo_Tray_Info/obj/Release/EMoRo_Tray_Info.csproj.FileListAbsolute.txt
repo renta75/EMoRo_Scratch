@@ -1,0 +1,17 @@
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\EMoRo_Tray_Info.exe.config
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\EMoRo_Tray_Info.exe
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\EMoRo_Tray_Info.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\SocketIOClient.dll
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\WebSocket4Net.dll
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\Newtonsoft.Json.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\Newtonsoft.Json.xml
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\SocketIOClient.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\SocketIOClient.xml
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Release\WebSocket4Net.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.Properties.Resources.resources
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.csproj.GenerateResource.cache
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.exe
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.csprojResolveAssemblyReference.cache
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.MainForm.resources

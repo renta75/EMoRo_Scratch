@@ -2,7 +2,6 @@ C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\EM
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\EMoRo_Tray_Info.exe
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\EMoRo_Tray_Info.pdb
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.csprojResolveAssemblyReference.cache
-C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.Form1.resources
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.Properties.Resources.resources
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.csproj.GenerateResource.Cache
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.exe
@@ -15,3 +14,4 @@ C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\Ne
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\SocketIOClient.pdb
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\SocketIOClient.xml
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\bin\Debug\WebSocket4Net.pdb
+C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Debug\EMoRo_Tray_Info.MainForm.resources
