@@ -26,6 +26,7 @@ namespace EMoRo_Tray_Info
             InitializeComponent();
             StartServer();
             Task.Delay(1000).Wait();
+            this.Visible = false;
 
         }
 
@@ -100,13 +101,13 @@ namespace EMoRo_Tray_Info
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            this.Visible = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
-            this.WindowState = FormWindowState.Minimized;
+            this.Visible = false;
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -114,9 +115,6 @@ namespace EMoRo_Tray_Info
             System.Environment.Exit(1);
         }
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
 
-        }
     }
 }
