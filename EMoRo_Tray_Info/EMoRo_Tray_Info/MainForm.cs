@@ -31,11 +31,7 @@ namespace EMoRo_Tray_Info
 
             Task.Delay(1000).Wait();
             this.Visible = false;
-            foreach (String port in SerialPort.GetPortNames())
-            {
-                comboBoxPorts.Items.Insert(0,port);
-            }
-            comboBoxPorts.SelectedIndex =0;
+            RefreshPorts();
 
             foreach (object item in comboBoxPorts.Items)
             {
@@ -190,9 +186,16 @@ namespace EMoRo_Tray_Info
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            if (process != null)
+            try
             {
-                process.Kill();
+                if (process != null)
+                {
+                    process.Kill();
+                    process = null;
+                }
+            }
+            catch (Exception exc)
+            {
                 process = null;
             }
         }
@@ -200,6 +203,36 @@ namespace EMoRo_Tray_Info
         private void btnStart_Click(object sender, EventArgs e)
         {
             StartProcess((String)comboBoxPorts.Items[comboBoxPorts.SelectedIndex]);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (process != null)
+                {
+                    process.Kill();
+                    process = null;
+                }
+            }
+            catch (Exception exc)
+            {
+                process = null;
+            }
+            finally
+            {
+                RefreshPorts();
+            }
+        }
+
+        private void RefreshPorts()
+        {
+            comboBoxPorts.Items.Clear();
+            foreach (String port in SerialPort.GetPortNames())
+            {
+                comboBoxPorts.Items.Insert(0, port);
+            }
+            comboBoxPorts.SelectedIndex = 0;
         }
     }
 }

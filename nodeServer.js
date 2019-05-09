@@ -22,12 +22,13 @@ var c = null;
 
 
 process.argv.forEach(function (val, index, array) {
-    if (val.split("=")[0] == "portName") {
-        portName = val.split("=")[1];
+    console.log(val.split('=')[0]+"\r\n");
+    if (val.split('=')[0] == "portName") {
+        portName = val.split('=')[1];
 
     }
-    else if (val.split("=")[0] == "boudRate") {
-        baudRate = val.split("=")[1];
+    else if (val.split('=')[0] == "boudRate") {
+        baudRate = val.split('=')[1];
     }
 });
 
@@ -96,25 +97,16 @@ io.on('connection', function (socket) {
         btSerial.inquireSync();
     };
 
+    function refreshSerial() {
+
+        changePort(portName, baudRate);
+        
+    };
+
 
     socket.emit("socketConnected");
     refreshBlueTooth();
-
-
-
-
-    refreshAvailablePorts(function (_allPorts, _portName, _baudRate) {
-        changePort(_portName, _baudRate);
-    });
-
-    socket.on('initPort', function (data) {
-        refreshAvailablePorts(function () {
-            var _portName = data.portName || portName;
-            var _baudRate = data.baudRate || baudRate;
-            if (!checkThatPortExists(_portName)) return;
-            changePort(_portName, _baudRate);
-        });
-    });
+    refreshSerial();
 
     socket.on('dataOut', function (data) {
         io.emit('dataSent', data);
@@ -247,12 +239,13 @@ io.on('connection', function (socket) {
     function onPortError(error) {
         console.log("Serial port error " + error);
         io.emit("errorMsg", { error: String(error) });
+        refreshSerial();
     }
 
     function onPortClosed() {
         console.log("Serial port closed! ");
         io.emit("portDisconnected");
-        initPort(portName, baudRate);
+        refreshSerial();
     }
 
     var dataBuffer = "";

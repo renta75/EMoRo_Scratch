@@ -13,5 +13,4 @@ C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.csproj.GenerateResource.cache
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.exe
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.pdb
-C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.csprojResolveAssemblyReference.cache
 C:\Users\Ivan\Desktop\EMoRo_Scratch\EMoRo_Tray_Info\EMoRo_Tray_Info\obj\Release\EMoRo_Tray_Info.MainForm.resources

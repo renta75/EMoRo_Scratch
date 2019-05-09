@@ -41,6 +41,7 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBluetooth)).BeginInit();
@@ -87,9 +88,9 @@
             // pictureBoxBluetooth
             // 
             this.pictureBoxBluetooth.Image = global::EMoRo_Tray_Info.Properties.Resources.bluetooth;
-            this.pictureBoxBluetooth.Location = new System.Drawing.Point(104, 80);
+            this.pictureBoxBluetooth.Location = new System.Drawing.Point(121, 80);
             this.pictureBoxBluetooth.Name = "pictureBoxBluetooth";
-            this.pictureBoxBluetooth.Size = new System.Drawing.Size(100, 74);
+            this.pictureBoxBluetooth.Size = new System.Drawing.Size(109, 96);
             this.pictureBoxBluetooth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBluetooth.TabIndex = 1;
             this.pictureBoxBluetooth.TabStop = false;
@@ -99,7 +100,7 @@
             this.pictureBoxSerial.Image = global::EMoRo_Tray_Info.Properties.Resources.USB_512;
             this.pictureBoxSerial.Location = new System.Drawing.Point(-2, 80);
             this.pictureBoxSerial.Name = "pictureBoxSerial";
-            this.pictureBoxSerial.Size = new System.Drawing.Size(100, 74);
+            this.pictureBoxSerial.Size = new System.Drawing.Size(117, 96);
             this.pictureBoxSerial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSerial.TabIndex = 0;
             this.pictureBoxSerial.TabStop = false;
@@ -108,15 +109,15 @@
             // 
             this.comboBoxPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPorts.FormattingEnabled = true;
-            this.comboBoxPorts.Location = new System.Drawing.Point(0, 160);
+            this.comboBoxPorts.Location = new System.Drawing.Point(0, 182);
             this.comboBoxPorts.Name = "comboBoxPorts";
-            this.comboBoxPorts.Size = new System.Drawing.Size(98, 21);
+            this.comboBoxPorts.Size = new System.Drawing.Size(65, 21);
             this.comboBoxPorts.TabIndex = 3;
             this.comboBoxPorts.SelectedIndexChanged += new System.EventHandler(this.comboBoxPorts_SelectedIndexChanged);
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(104, 158);
+            this.btnStart.Location = new System.Drawing.Point(121, 182);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(43, 23);
             this.btnStart.TabIndex = 4;
@@ -126,7 +127,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(163, 158);
+            this.btnStop.Location = new System.Drawing.Point(189, 182);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(41, 23);
             this.btnStop.TabIndex = 5;
@@ -134,12 +135,23 @@
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(71, 181);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(44, 21);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refr.";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(208, 183);
+            this.ClientSize = new System.Drawing.Size(233, 205);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.comboBoxPorts);
@@ -176,6 +188,7 @@
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 
