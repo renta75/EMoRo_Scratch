@@ -8469,20 +8469,19 @@ module.exports={
         ["R", "read io %m.io", "read_io", "IO_0"],
         ["R", "read adc %m.adc", "read_adc", "ADC_0"],
         [" ", "servo %m.servo %n", "servo", "SERVO_0",0],
-        ["R", "temperature %n ", "temperature", 0],
+        ["R", "temperature %m.io", "temperature", "IO_0"],
         ["R", "ultrasound %m.gpp ", "ultrasound", "GPP_0"],
+        [" ", "tone %n %n ", "cursor", 0,0],
         [" ", "cursor %n %n ", "cursor", 0,0],
         [" ", "display %s ", "display", "some text..."],
         ["R", "compass", "compass"],
-        ["R", "gyroscope %m.axis", "gyroscope", "x"],
-        ["w", "gyroscope init", "gyroscope_init"],
-        ["w", "gyroscope reset", "gyroscope_reset"],
-        ["R", "acceleration %m.axis", "acceleration", "x"],
-        ["w", "bluetooth write %s", "bluetooth_write", "some value..."],
-        ["R", "bluetooth read", "bluetooth_read"]
+        ["R", "gyroscope %m.axis", "gyroscope", "X"],
+        [" ", "gyroscope init", "gyroscope_init"],
+        [" ", "gyroscope reset", "gyroscope_reset"],
+        ["R", "acceleration %m.axis", "acceleration", "X"]
       ],
       "menus": {
-        "axis": ["x", "y", "z"],
+        "axis": ["X", "Y", "Z"],
         "servo": ["SERVO_0", "SERVO_1", "SERVO_2", "SERVO_3", "SERVO_4", "SERVO_5", "SERVO_6", "SERVO_7" ],
         "io": ["IO_0","IO_1","IO_2","IO_3","IO_4","IO_5","IO_6","IO_7","IO_8","IO_9","IO_10","IO_11","IO_12","IO_13","IO_14","IO_15"],
         "adc": ["ADC_0","ADC_1","ADC_2","ADC_3","ADC_4","ADC_5","ADC_6","ADC_7"],
@@ -8584,6 +8583,14 @@ module.exports = {
     }
   },
 
+  tone: function(freq, duration)
+  {
+
+    if (socket) {
+      socket.emit("dataOut", "tone,"+freq+","+duration+"\n");
+    }
+  },
+
   display: function(value)
   {
 
@@ -8611,7 +8618,7 @@ module.exports = {
   gyroscope: function(axis,callback)
   {
     if (socket) {
-      socket.emit("dataOut", "gyroscope\n");
+      socket.emit("dataOut", "gyroscope,"+axis+"\n");
       socket.on("dataIn", function(data) {
         callback(data);
       });
@@ -8635,7 +8642,7 @@ module.exports = {
   acceleration: function(axis,callback)
   {
     if (socket) {
-      socket.emit("dataOut", "acceleration\n");
+      socket.emit("dataOut", "acceleration,"+axis+"\n");
       socket.on("dataIn", function(data) {
         callback(data);
       });

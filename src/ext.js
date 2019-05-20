@@ -83,6 +83,14 @@ module.exports = {
     }
   },
 
+  tone: function(freq, duration)
+  {
+
+    if (socket) {
+      socket.emit("dataOut", "tone,"+freq+","+duration+"\n");
+    }
+  },
+
   display: function(value)
   {
 
@@ -110,7 +118,7 @@ module.exports = {
   gyroscope: function(axis,callback)
   {
     if (socket) {
-      socket.emit("dataOut", "gyroscope\n");
+      socket.emit("dataOut", "gyroscope,"+axis+"\n");
       socket.on("dataIn", function(data) {
         callback(data);
       });
@@ -134,7 +142,7 @@ module.exports = {
   acceleration: function(axis,callback)
   {
     if (socket) {
-      socket.emit("dataOut", "acceleration\n");
+      socket.emit("dataOut", "acceleration,"+axis+"\n");
       socket.on("dataIn", function(data) {
         callback(data);
       });

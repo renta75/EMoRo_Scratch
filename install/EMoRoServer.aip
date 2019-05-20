@@ -8,7 +8,7 @@
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="Baza podataka ovog instalacijskog programa sadrži logiku i podatke potrebne za instalaciju [|ProductName]." ValueLocId="*"/>
     <ROW Property="CTRLS" Value="2"/>
-    <ROW Property="Manufacturer" Value="Inovatic ICT Ltd."/>
+    <ROW Property="Manufacturer" Value="Inovatic ICT LLC"/>
     <ROW Property="ProductCode" Value="1050:{035CD44B-585C-4010-B45A-D2E5A20DAA61} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1050"/>
     <ROW Property="ProductName" Value="EMoRoServer"/>

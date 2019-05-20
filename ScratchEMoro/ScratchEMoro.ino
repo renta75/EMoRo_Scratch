@@ -1,17 +1,26 @@
 #include <StringSplitter.h>
 
+HardwareSerial* serial;
 
 void setup() {
   Serial.begin(9600);
   EmoroServo.attach(SERVO_0);  //Initiates servo on SERVO_0 port.
-  Serial.println("Initialisation");
+  if(ReadEmoroHardware() & BLUETOOTH_AVAILABLE) {
+    Serial.println("Bluetooth Available");
+    serial=&Serial1;
+  }
+  else {
+    Serial.println("Bluetooth Not Available");
+    serial=&Serial;
+  }
 }
 
 String command="";
+
 void loop() {
-    while (Serial1.available() > 0) {
+    while (serial->available() > 0) {
   
-        char currChar=(char) Serial1.read();
+        char currChar=(char) serial->read();
         
         if(currChar!='\n')
         {
@@ -48,6 +57,10 @@ void process_command(String command)
   {
     Lcd.print(splitter->getItemAtIndex(1));
   }
+  else if (command.startsWith("tone"))
+  {
+    tone(BUZ_BUILTIN, splitter->getItemAtIndex(1).toInt(), splitter->getItemAtIndex(2).toInt());
+  }
   else if (command.startsWith("cursor"))
   {
     
@@ -59,23 +72,38 @@ void process_command(String command)
     EmoroServo.write(SERVO_0+splitterSERVO->getItemAtIndex(1).toInt(),splitter->getItemAtIndex(2).toInt());
     
   }
+  else if (command.startsWith("ultrasound"))
+  {
+    StringSplitter *splitterUltraSound = new StringSplitter(splitter->getItemAtIndex(1), '_',10);
+    int cm;
+    cm=Ultrasonic.read(GPP_0+splitterUltraSound->getItemAtIndex(1).toInt());
+
+    serial->println(cm);  
+    
+  }
   else if (command.startsWith("temperature"))
   {
-    Serial1.println("200.00");  
+    StringSplitter *splitterIO = new StringSplitter(splitter->getItemAtIndex(1), '_',10);
+    int res = DS18S20.attach(IO_0+splitterIO->getItemAtIndex(1).toInt());
+    float temp_c = DS18S20.read(IO_0+splitterIO->getItemAtIndex(1).toInt());
+    
+    char buf[32];                                                 
+    sprintf(buf, "%4d", temp_c);
+    serial->println(buf);  
   }
   else if (command.startsWith("compass"))
   {
     char buf[32];                                                 
     int direction = Mag.readDirection();
     sprintf(buf, "%4d", direction);
-    Serial1.println(buf);    
+    serial->println(buf);    
   }
   else if (command.startsWith("gyroscope_init"))
   {
     char buf[32];                                                 
     int direction = Mag.readDirection();
     sprintf(buf, "%4d", direction);
-    Serial1.println(buf);    
+    serial->println(buf);    
   }
   else if (command.startsWith("gyroscope_reset"))
   {
@@ -92,11 +120,16 @@ void process_command(String command)
     if(res == 0){
       // print current positions:
       sprintf(buf, "Current position: X =%3d, Y =%3d, Z =%3d", (int)x_deg, (int)y_deg, (int)z_deg);
-      Serial1.println(buf);                                              // print buffer string
+      if(splitter->getItemAtIndex(1)=="X")
+        serial->println(x_deg);
+      else if(splitter->getItemAtIndex(1)=="Y")
+        serial->println(y_deg);
+      else if(splitter->getItemAtIndex(1)=="Z")
+        serial->println(z_deg);
     }
     else
     {
-      Serial1.println("Can't read angular position.");                   // print constant string  
+      serial->println("Can't read angular position.");                   // print constant string  
     }
   }
   else if (command.startsWith("acceleration"))
@@ -122,12 +155,26 @@ void process_command(String command)
       z_phy=z*2.0*9.81/512;
   
       char buf[32];                                              // initialize variables
-      sprintf(buf, "X =%4d, Y =%4d, Z =%4d", x, y, z);          // form a result string
-      Serial1.println(buf);                                      // print buf string
+      
+      if(splitter->getItemAtIndex(1)=="X"){
+        sprintf(buf, "%4d",x );
+        serial->println(buf);
+      }
+      else if(splitter->getItemAtIndex(1)=="Y"){
+        sprintf(buf, "%4d",y );
+        serial->println(buf);
+      }
+      else if(splitter->getItemAtIndex(1)=="Z"){
+        sprintf(buf, "%4d",z );
+        serial->println(buf);
+      }
+      else {
+        serial->println(splitter->getItemAtIndex(1)=="Z");
+      }
     }
     else
     {
-      Serial1.println("Can't read acceleration.");                   // print constant string  
+      serial->println("Can't read acceleration.");                   // print constant string  
     }
   }
 }
